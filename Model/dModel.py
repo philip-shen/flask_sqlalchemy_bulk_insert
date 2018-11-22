@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
+from sqlalchemy import func
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 print(basedir)
@@ -72,6 +73,13 @@ class BulkInsertTest():
                     dic_files
                     for dic_files in list_folderfiles 
         ])        
+
+#2018/11/22 Fast SQLAlchemy counting (avoid query.count() subquery) 
+#           https://gist.github.com/hest/8798884
+def get_count(q):
+    count_q = q.statement.with_only_columns([func.count()]).order_by(None)
+    count = q.session.execute(count_q).scalar()
+    return count
 
 if __name__ == '__main__':
     manager.run()

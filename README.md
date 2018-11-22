@@ -1,5 +1,19 @@
 # flask_sqlalchemy_bulk_insert
-Performance test of bulk insert that stores files info from Google Drive by flask sqlalchemy
+Performance test of bulk insert that inserts multiple rows from Google Drive by flask sqlalchemy
+
+## Usage
+Step 1.Update your individual Google Driver Credentials.
+
+``` 
+Step 2.Make sure Environment Configuration done.
+
+``` 
+Step 3.Edit content of config.ini.
+
+``` 
+Step 4.Follow DB Operation procedure.
+
+``` 
 
 ## DB Operation
 Step 1.
@@ -47,13 +61,22 @@ C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794
   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
 Google Authentication Started
 Google Authentication Completed!
-Get data from Google Drive duration: 9.46 seconds
-SA ORM Bulk insert, discarding PKs- total time: 0.13 seconds
-SA ORM Bulk insert, using dictionaries- total time: 0.15 seconds
+Get data from Google Drive duration: 13.02 seconds
+Insert 1038 rows into table.
+SA ORM Bulk insert, discarding PKs- total time: 0.11 seconds
+Insert 1038 rows into table.
+SA ORM Bulk insert, using dictionaries- total time: 0.05 seconds
 DONE
 
+## Environment Configuration
+* Python 3.4.3
+* Refer requirements.txt to pip necessary modules.
+
 ## Reference 
-* [Flask-Migrate-Tutorial](https://github.com/twtrubiks/Flask-Migrate-Tutorial)
-透過 Flask-Migrate-Tutorial 管理資料庫 (database) 
+* [Flask-Migrate-Tutorial 透過 Flask-Migrate-Tutorial 管理資料庫 (database)](https://github.com/twtrubiks/Flask-Migrate-Tutorial)
 * [Source code for examples.performance.bulk_inserts](https://docs.sqlalchemy.org/en/latest/_modules/examples/performance/bulk_inserts.html) 
-* [Optimize Inserts Using SQLAlchemy](http://www.devx.com/dbzone/optimize-inserts-using-sqlalchemy.html)  
+* [Optimize Inserts Using SQLAlchemy](http://www.devx.com/dbzone/optimize-inserts-using-sqlalchemy.html)
+* [Flask-Migrate sqlite 惹的麻煩](https://blog.burn-i.com/20180418/flask-migrate/)    
+
+## License
+MIT license

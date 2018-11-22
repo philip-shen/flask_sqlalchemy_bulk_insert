@@ -48,10 +48,13 @@ for dic_folderfiles in list_foldersfiles:
 
 db.session.commit()
 duration = time.time() - starttime
+q = db.session.query(GoogleDrive_callputjpg)
+print('Insert {} rows into table.'.format(get_count(q)))
 print('SA ORM Bulk insert, discarding PKs- total time: {:.2f} seconds'.format(duration)) 
 
 # bulk insert atonce then commit
 starttime=time.time()
+row_count=0
 for dic_folderfiles in list_foldersfiles:
     try:
         BulkInsertTest(db).test_bulk_insert_mappings(dic_folderfiles['list'])
@@ -60,8 +63,12 @@ for dic_folderfiles in list_foldersfiles:
     except Exception as exception:
             print(exception)
 
+    row_count += len(dic_folderfiles['list'])
+
 db.session.commit()
 duration = time.time() - starttime
+print('Insert {} rows into table.'.format(row_count))
 print('SA ORM Bulk insert, using dictionaries- total time: {:.2f} seconds'.format(duration))
+
 
 print("DONE")
