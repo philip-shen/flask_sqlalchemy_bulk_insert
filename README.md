@@ -3,16 +3,12 @@ Performance test of bulk insert that inserts multiple rows from Google Drive by 
 
 ## Usage
 Step 1.Update your individual Google Driver Credentials.
-
 ``` 
 Step 2.Make sure Environment Configuration done.
-
 ``` 
 Step 3.Edit content of config.ini.
-
 ``` 
 Step 4.Follow DB Operation procedure.
-
 ``` 
 
 ## DB Operation
