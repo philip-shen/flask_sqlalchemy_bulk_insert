@@ -40,7 +40,7 @@ for dic_folderfiles in list_foldersfiles:
         #for dic_files in dic_folderfiles['list']:
             #print('title:{}, modifiedDate:{}'.format(dic_files['title'],dic_files['modifiedDate']))
             #print('URL:{}'.format(dic_files['title1']))
-        BulkInsertTest(db).test_bulk_save(dic_folderfiles['list'])
+        BulkInsertTest(db,GoogleDrive_callputjpg).test_bulk_save(dic_folderfiles['list'])
     except KeyError as error:
             print(error)
     except Exception as exception:
@@ -57,7 +57,7 @@ starttime=time.time()
 row_count=0
 for dic_folderfiles in list_foldersfiles:
     try:
-        BulkInsertTest(db).test_bulk_insert_mappings(dic_folderfiles['list'])
+        BulkInsertTest(db,GoogleDrive_callputjpg).test_bulk_insert_mappings(dic_folderfiles['list'])
     except KeyError as error:
             print(error)
     except Exception as exception:
